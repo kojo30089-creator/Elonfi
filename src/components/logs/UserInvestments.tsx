@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react"; 
+import React, { useEffect, useState } from "react";
 import {
   Table,
   TableBody,
@@ -21,6 +21,7 @@ type Investment = {
   status: string;
   start_date: string;
   end_date: string | null;
+  crypto: string;
   investment_plans: {
     name: string;
     interest_rate: number;
@@ -67,6 +68,7 @@ export default function UserInvestments() {
               start_date: inv.startDate,
               end_date: inv.endDate ?? null,
               investment_plans: matchedPlan,
+              crypto: inv.crypto
             };
           }))
 
@@ -162,8 +164,8 @@ export default function UserInvestments() {
               ) : (
                 investments.map((inv) => (
                   <TableRow key={inv.id}>
-                    <TableCell className="px-5 py-4 text-start text-theme-sm text-gray-800 dark:text-white/90">
-                      {inv.investment_plans.name}
+                    <TableCell className="px-5 py-4 text-start capitalize text-theme-sm text-gray-800 dark:text-white/90">
+                      {inv.crypto} ({inv.investment_plans.name})
                     </TableCell>
                     <TableCell className="px-5 py-4 text-theme-sm text-gray-700 dark:text-gray-300">
                       ${inv.amount.toFixed(2)}

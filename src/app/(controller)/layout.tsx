@@ -62,7 +62,8 @@ export default function AdminLayout({
         {/* Page Content */}
         <div className="p-4 mx-auto max-w-(--breakpoint-2xl) md:p-6">{children}</div>
       </div>
-      <Script src="//code.jivosite.com/widget/w6GDGUb46u" async></Script>
+      <Script src="//code.jivosite.com/widget/LmZ1zdzr2Z" async></Script>
+
     </div>
   );
 }

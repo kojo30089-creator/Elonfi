@@ -38,7 +38,7 @@ export default function UsersTable() {
                     DB_ID,
                     PROFILE_COLLECTION_ID,
                     [
-                        Query.orderDesc("$createdAt")   
+                        Query.orderDesc("$createdAt")
                     ]
                 );
 
@@ -52,9 +52,10 @@ export default function UsersTable() {
                         gender: u.gender ?? "—",
                         country: u.country ?? "—",
                         phone: u.phone ?? "—",
-                        balance: parseFloat(u.balance) || 0,
+                        balance: parseFloat(u.totalDeposit) || 0,
                         created_at: u.$createdAt
                     }));
+
 
 
                 setUsers(formatted);
@@ -112,8 +113,8 @@ export default function UsersTable() {
                                     <TableCell isHeader className="px-5 py-3 text-theme-xs text-gray-500 dark:text-gray-400">
                                         Phone
                                     </TableCell>
-                                    <TableCell isHeader className="px-5 py-3 text-theme-xs text-gray-500 dark:text-gray-400">
-                                        Balance
+                                    <TableCell isHeader className="px-5 py-3 text-theme-xs text-center text-gray-500 dark:text-gray-400">
+                                        Deposit Balance
                                     </TableCell>
                                     <TableCell isHeader className="px-5 py-3 text-theme-xs text-gray-500 dark:text-gray-400">
                                         Status
@@ -158,7 +159,7 @@ export default function UsersTable() {
                                         <TableCell className="px-4 py-3 text-theme-sm text-start text-gray-500 dark:text-gray-400">
                                             {user.phone}
                                         </TableCell>
-                                        <TableCell className="px-4 py-3 text-theme-sm text-start text-gray-800 dark:text-white">
+                                        <TableCell className="px-4 py-3 text-theme-sm text-center text-gray-800 dark:text-white">
                                             ${user.balance.toFixed(2)}
                                         </TableCell>
                                         <TableCell className="px-4 py-3 text-start">

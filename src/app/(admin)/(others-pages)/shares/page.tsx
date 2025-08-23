@@ -163,7 +163,7 @@ export default function BuySharesPage() {
 
             <div className="w-full max-w-lg rounded-2xl shadow-lg p-8">
                 <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
-                    Buy Shares
+                    Buy Tesla Shares
                 </h1>
                 <p className="text-gray-500 dark:text-gray-400 mb-6">
                     Invest in your future today. You can enter either the number of shares or the total amount in dollars.
@@ -177,7 +177,7 @@ export default function BuySharesPage() {
 
                 {/* Balance Info */}
                 <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg flex items-center justify-between mb-6">
-                    <span className="text-gray-600 dark:text-gray-300 font-medium">Total Deposit</span>
+                    <span className="text-gray-600 dark:text-gray-300 font-medium">Deposit Balance</span>
                     <span className="text-lg font-bold text-gray-900 dark:text-white">${balance.toFixed(2)}</span>
                 </div>
 
@@ -185,8 +185,8 @@ export default function BuySharesPage() {
                 <div className="flex mb-6 bg-gray-100 dark:bg-gray-700 p-1 rounded-lg">
                     <button
                         onClick={() => setMode("shares")}
-                        className={`flex-1 py-2 rounded-lg text-sm font-medium transition py-3 ${mode === "shares"
-                            ? "bg-[#ce1632] text-white"
+                        className={`flex-1 rounded-lg text-sm font-medium transition py-3 ${mode === "shares"
+                            ? "bg-brand-600 text-white"
                             : "bg-transparent text-gray-600 dark:text-gray-300"
                             }`}
                     >
@@ -195,7 +195,7 @@ export default function BuySharesPage() {
                     <button
                         onClick={() => setMode("amount")}
                         className={`flex-1 py-2 rounded-lg text-sm font-medium transition py-3 ${mode === "amount"
-                            ? "bg-[#ce1632] text-white"
+                            ? "bg-brand-600 text-white"
                             : "bg-transparent text-gray-600 dark:text-gray-300"
                             }`}
                     >

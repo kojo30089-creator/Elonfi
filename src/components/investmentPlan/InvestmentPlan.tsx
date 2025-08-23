@@ -18,7 +18,11 @@ type InvestmentPlan = {
   min_amount: number;
 };
 
-export default function InvestmentPlansPage() {
+interface SlugProp {
+  slug: string;
+}
+
+export default function InvestmentPlansPage(prop: SlugProp) {
   const [plans, setPlans] = useState<InvestmentPlan[]>([]);
   const [loading, setLoading] = useState(true);
   const [userId, setUserId] = useState<string | null>(null);
@@ -113,6 +117,7 @@ export default function InvestmentPlansPage() {
       await databases.createDocument(DB_ID, INVESTMENT_COLLECTION, ID.unique(), {
         userId,
         planId: plan.id,
+        crypto: prop.slug,
         amount: plan.min_amount,
         status: "active",
         startDate: startedAt.toISOString(),
@@ -193,7 +198,7 @@ export default function InvestmentPlansPage() {
             variant="outline"
             className="mt-5"
             onClick={() => handleInvest(plan)}
-            disabled={investing === plan.id || investment === plan.id}
+            // disabled={investing === plan.id || investment === plan.id}
           >
             {investing === plan.id ? "Processing..." : "Start Investment"}
             <ArrowRight size={16} />

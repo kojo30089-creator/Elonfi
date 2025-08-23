@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { getUser } from "@/lib/appwrite/auth";
 
-export default function Home() {
+export default function Oome() {
   const [section, setSection] = useState<null | Awaited<ReturnType<typeof getUser>>>(null)
   const navigate = useRouter();
   const pathname = usePathname();

@@ -227,6 +227,7 @@ export default function SignUpForm() {
         toast.error("Email already registered. Try signing in.");
       } else {
         toast.error("An error occurred during sign-up. Please try again.");
+        console.log(message)
       }
     }
 

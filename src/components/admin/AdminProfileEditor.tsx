@@ -10,8 +10,8 @@ import Input from "../form/input/InputField";
 import Select from "../form/Select";
 import KycDocumentCard from "./KycDocumentCard";
 import Link from "next/link";
-import { databases, DB_ID, PROFILE_COLLECTION_ID, STOCKLOG_COLLECTION_ID } from "@/lib/appwrite/client";
-import { Query } from "appwrite";
+import { databases, DB_ID, NOTIFICATION_COLLECTION, PROFILE_COLLECTION_ID, STOCKLOG_COLLECTION_ID } from "@/lib/appwrite/client";
+import { ID, Query } from "appwrite";
 import Loading from "../ui/Loading";
 import { fetchTeslaPrice } from "@/lib/appwrite/auth";
 
@@ -190,7 +190,6 @@ export default function AdminUserProfileCard({ id }: { id: string }) {
 
 
     try {
-
       const parseNumber = (val: number | string | null | undefined): number => {
         if (typeof val === "number") return val;
         if (typeof val === "string") {
@@ -229,6 +228,21 @@ export default function AdminUserProfileCard({ id }: { id: string }) {
 
       if (Object.keys(payload).length > 0) {
         await databases.updateDocument(DB_ID, PROFILE_COLLECTION_ID, id, payload);
+      }
+
+      if (updatedFields.profit) {
+        await databases.createDocument(
+          DB_ID,
+          NOTIFICATION_COLLECTION,
+          ID.unique(),
+          {
+            userId: profile.id,
+            title: "Profits",
+            message:
+              `You just earned $${updatedFields.profit} profit.`,
+            type: "profit",
+          }
+        );
       }
 
 

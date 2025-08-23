@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react"; 
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import {
     Table,
@@ -24,6 +24,7 @@ interface Investment {
     amount: number;
     plan_id: number;
     start_date: string;
+    crypto: string;
     status: string;
     profit: number | null;
     ends_date: string | null;
@@ -78,7 +79,8 @@ export default function AdminUserInvestmentsTable({ userId }: Props) {
                         status: computedStatus,
                         profit: inv.profit,
                         ends_date: inv.endsDate ?? inv.endDate ?? null,
-                        plan_name: plansMap.get(inv.planId) ?? "N/A"
+                        plan_name: plansMap.get(inv.planId) ?? "N/A",
+                        crypto: inv.crypto
                     }
 
                 });
@@ -95,7 +97,7 @@ export default function AdminUserInvestmentsTable({ userId }: Props) {
         fetchInvestments();
     }, [userId]);
 
-    if (loading) return <Loading/>;
+    if (loading) return <Loading />;
     if (investments.length === 0) return <div className="p-6 text-center text-gray-500">No investments found.</div>;
 
     return (
@@ -117,7 +119,7 @@ export default function AdminUserInvestmentsTable({ userId }: Props) {
                             <TableBody className="divide-y divide-gray-100 dark:divide-white/[0.05]">
                                 {investments.map((inv) => (
                                     <TableRow key={inv.id} className="text-center">
-                                        <TableCell className="px-5 py-3 text-theme-sm text-gray-800 dark:text-white/90">{inv.plan_name}</TableCell>
+                                        <TableCell className="px-5 py-3 text-theme-sm text-gray-800 dark:text-white/90 capitalize">{inv.crypto} ({inv.plan_name})</TableCell>
                                         <TableCell className="px-5 py-3 text-theme-sm text-gray-700 dark:text-white/80">${inv.amount.toFixed(2)}</TableCell>
 
                                         <TableCell className="px-5 py-3 text-theme-sm">

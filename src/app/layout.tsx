@@ -1,7 +1,7 @@
 import { Outfit } from 'next/font/google';
 import { SidebarProvider } from '@/context/SidebarContext';
 import { ThemeProvider } from '@/context/ThemeContext';
-import { Toaster } from '@/components/ui/sonner'; 
+import { Toaster } from '@/components/ui/sonner';
 
 
 
@@ -12,13 +12,13 @@ import Script from 'next/script';
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
-  title: ' Trade Pro - Blockchain Company',
+  title: ' ElonFi - Blockchain Company',
   description:
-    'tradeproassets.xyz is an investment firm committed to exceptional returns for investors through actively managed portfolios of these blockchain assets.',
+    'trustedgebroker.com is an investment firm committed to exceptional returns for investors through actively managed portfolios of these blockchain assets.',
   keywords:
     'blockchain, Forex, FX, Crypto, Cryptos, Cryptocurrencies, Stock, Stocks, Bonds, Invest, Investment, Equity',
   openGraph: {
-    url: 'https://tradeproassets.xyz/',
+    url: 'https://trustedgebroker.com/',
     type: 'website',
     title: 'Trade With Us',
     description:
@@ -29,8 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    domain: 'tradeproassets.xyz',
-    url: 'https://tradeproassets.xyz/',
+    domain: 'trustedgebroker.com',
+    url: 'https://trustedgebroker.com/',
     title: 'Trade With Us',
     description:
       'Earn huge return on investment. With our professional team of traders, you are guaranteed of your earnings.',
@@ -48,7 +48,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SidebarProvider>{children}</SidebarProvider>
           <Toaster />
         </ThemeProvider>
-        <Script src="//code.jivosite.com/widget/w6GDGUb46u" async></Script>
+        <Script src="//code.jivosite.com/widget/LmZ1zdzr2Z" async></Script>
+
       </body>
     </html>
   );

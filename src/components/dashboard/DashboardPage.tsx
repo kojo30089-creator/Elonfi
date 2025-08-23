@@ -15,6 +15,7 @@ import { databases, DB_ID, INVESTMENT_COLLECTION, PROFILE_COLLECTION_ID, TRANSAC
 import { Query } from "appwrite";
 // import { set } from "date-fns";
 import { tierList } from "@/lib/data/info";
+import TradingViewTicker from "../tradingview/TradingViewTicker";
 
 export default function DashboardPage() {
     const [loading, setLoading] = useState(true);
@@ -130,6 +131,10 @@ export default function DashboardPage() {
                     </Alert>
                 </div>
             )}
+            <div className="col-span-12 space-y-6 flex flex-col ">
+                <TradingViewTicker />
+            </div>
+
 
             <div className="col-span-12 space-y-6 xl:col-span-7 flex flex-col ">
                 {loading || showKycAlert ? (

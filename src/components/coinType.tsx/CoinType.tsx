@@ -56,7 +56,7 @@ export default function CryptoInvestPage() {
             {coins.map((coin) => (
                 <div key={coin.id} className="group flex flex-col justify-between border rounded-2xl p-5 shadow-sm bg-white dark:bg-white/[0.02] dark:border-white/[0.05] hover:shadow-md transition">
                     <div className="flex items-center space-x-4">
-                        <Image sizes="100%" src={coin.image} alt={coin.name} className="w-10 h-10" />
+                        <Image sizes="100%" src={coin.image} alt={coin.name} width={40} height={40} className="w-10 h-10" />
                         <h3 className="text-xl font-semibold text-gray-800 dark:text-white group-hover:text-primary transition">
                             {coin.name} ({coin.symbol.toUpperCase()})
                         </h3>

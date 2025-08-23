@@ -3,7 +3,7 @@ import React from "react";
 import ProfilePage from "@/components/user-profile/ProfilePage";
 
 export const metadata: Metadata = {
-  title: "ElonFi - Blockchain Company",
+  title: "Trustedgebroker - Blockchain Company",
   description:
     "Earn huge return on investment. With our professional team of Traders, you are guaranteed of your earnings.",
 };

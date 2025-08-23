@@ -12,7 +12,7 @@ import Script from 'next/script';
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
-  title: ' ElonFi - Blockchain Company',
+  title: ' Trustedgebroker - Blockchain Company',
   description:
     'trustedgebroker.com is an investment firm committed to exceptional returns for investors through actively managed portfolios of these blockchain assets.',
   keywords:

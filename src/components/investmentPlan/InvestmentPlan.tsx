@@ -30,7 +30,7 @@ export default function InvestmentPlansPage(prop: SlugProp) {
   const [balance, setBalance] = useState<number>(0);
   const [balanc, setBalanc] = useState<number>(0);
   const [investing, setInvesting] = useState<string | null>(null);
-  const [investment, setInvestment] = useState<string | null>(null);
+  // const [investment, setInvestment] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -77,15 +77,15 @@ export default function InvestmentPlansPage(prop: SlugProp) {
           const now = new Date();
           const endDate = new Date(lastInvestment.endDate);
 
-          if (now > endDate) {
-            // ✅ Investment has expired
-            console.log("Investment has expired.");
-            setInvestment("expired"); // or setHasExpired(true)
-          } else {
-            // ✅ Investment is still active
-            console.log("Investment is still active.");
-            setInvestment(lastInvestment.planId); // or setHasExpired(false)
-          }
+          // if (now > endDate) {
+          //   // ✅ Investment has expired
+          //   console.log("Investment has expired.");
+          //   setInvestment("expired"); // or setHasExpired(true)
+          // } else {
+          //   // ✅ Investment is still active
+          //   console.log("Investment is still active.");
+          //   setInvestment(lastInvestment.planId); // or setHasExpired(false)
+          // }
         }
 
       } catch (error) {

@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { client } from "@/lib/appwrite/client";
 import { AppwriteException } from "appwrite"; 
-import Image from "next/image";
 
 export default function Home() {
   const [detailHeight, setDetailHeight] = useState(55);

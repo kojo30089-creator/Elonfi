@@ -53,7 +53,7 @@ export const EcommerceMetrics = () => {
         const totalShare = documents.reduce((sum, tx) => sum + (tx.shares || 0), 0) || 0;
 
 
-        setBalance(profile?.balance || 0);
+        setBalance(profile?.totalDeposit || 0);
         setTotalShare(totalShare)
         setTotalDeposit(profile?.totalDeposit || 0);
         setProfit(profile?.profit || 0)
@@ -92,7 +92,7 @@ export const EcommerceMetrics = () => {
           <BanknoteIcon className="text-gray-800 dark:text-white/90" />
         </div>
         <div>
-          <span className="text-sm text-gray-500 dark:text-gray-400">Deposit Balance</span>
+          <span className="text-sm text-gray-500 dark:text-gray-400">Total Deposit</span>
           <h4 className="mt-2 font-bold text-gray-800 text-2xl dark:text-white/90">
             {loading ? <Skeleton className="h-6 w-24" /> : `$${totalDeposit?.toFixed(2)}`}
           </h4>

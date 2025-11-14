@@ -38,12 +38,13 @@ export default function UsersTable() {
                     DB_ID,
                     PROFILE_COLLECTION_ID,
                     [
-                        Query.orderDesc("$createdAt")
+                        Query.orderDesc("$createdAt"),
+                        Query.limit(200)
                     ]
                 );
 
                 const formatted = res.documents
-                    .filter((u) => !u.labels || !u.labels.includes("admin"))
+                    // .filter((u) => !u.labels || !u.labels.includes("admin"))
                     .map((u) => ({
                         id: u.$id,
                         name: `${u.firstName ?? ""} ${u.lastName ?? ""}`.trim(),
